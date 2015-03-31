@@ -7,11 +7,11 @@ The first motivation was to offer more realistic data to our sample applications
     npm install
     node app/index.js
 
-## API Documentation
+## API Documentation - [View](http://htmlpreview.github.io/?https://github.com/JLBoor/sample-app-api/blob/master/doc/api.html)
+TODO
 
-[View API](http://htmlpreview.github.com/?https://github.com/JLBoor/sample-app-api/doc/api.html)
-
-### Tasks in progress
+## Tasks in progress
+- add authentication operation
 - auto-generate documentation
 - handle errors cases
 - add pagination and filtering
