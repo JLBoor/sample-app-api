@@ -1,0 +1,31 @@
+{
+  "name": "sample-app-api",
+  "version": "0.1.0",
+  "description": "Just a simple REST API",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JLBoor/sample-app-api.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "simple",
+    "tests"
+  ],
+  "author": "Jean-Louis Bourgeois",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JLBoor/sample-app-api/issues"
+  },
+  "homepage": "https://github.com/JLBoor/sample-app-api",
+  "dependencies": {
+    "lowdb": "^0.7.2",
+    "node-uuid": "^1.4.3",
+    "restify": "^3.0.1",
+    "underscore-db": "^0.8.1"
+  }
+}

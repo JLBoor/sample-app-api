@@ -1,0 +1,239 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Sample App - API Documentation</title><link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200"><style>/* Highlight.js Theme Tomorrow */
+.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}</style><style>body,
+h4,
+h5 {
+  font-family: 'Roboto' sans-serif !important;
+}
+h1,
+h2,
+h3,
+.aglio {
+  font-family: 'Raleway' sans-serif !important;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  display: none;
+}
+h1:hover a,
+h2:hover a,
+h3:hover a,
+h4:hover a,
+h5:hover a {
+  display: inline;
+}
+code {
+  color: #444;
+  background-color: #ddd;
+  font-family: 'Inconsolata' monospace !important;
+}
+a[data-target] {
+  cursor: pointer;
+}
+h4 {
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.back-to-top {
+  position: fixed;
+  z-index: 1;
+  bottom: 0px;
+  right: 24px;
+  padding: 4px 8px;
+  background-color: #eee;
+  text-decoration: none !important;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(0,0,0,0.1);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel {
+  overflow: hidden;
+}
+.panel-heading code {
+  margin-left: 3px;
+  color: #c7254e;
+  background-color: rgba(255,255,255,0.7);
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.panel-heading h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+a.list-group-item:hover {
+  background-color: #f8f8f8;
+  border-left: 2px solid #555;
+  padding-left: 15px;
+}
+.indent {
+  display: block;
+  text-indent: 16px;
+}
+.list-group-item {
+  padding-left: 16px;
+}
+.list-group-item .toggle .open {
+  display: block;
+}
+.list-group-item .toggle .closed {
+  display: none;
+}
+.list-group-item.collapsed .toggle .open {
+  display: none;
+}
+.list-group-item.collapsed .toggle .closed {
+  display: block;
+}
+a.list-group-item {
+  font-size: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+a.list-group-item.heading {
+  font-size: 15px;
+  background-color: #f5f5f5;
+}
+a.list-group-item.heading:hover {
+  background-color: #f8f8f8;
+}
+.list-group-item.collapse {
+  display: none;
+}
+.list-group-item.collapse.in {
+  display: block;
+}
+.list-group-item a span.closed {
+  display: none;
+}
+.list-group-item a span.open {
+  display: block;
+}
+.list-group-item a.collapsed span.closed {
+  display: block;
+}
+.list-group-item a.collapsed span.open {
+  display: none;
+}
+#nav {
+  width: inherit;
+  margin-top: 38px;
+  max-width: 255px;
+  top: 0;
+  bottom: 0;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  overflow-y: auto;
+}
+@media (max-width: 1199px) {
+  #nav {
+    max-width: 212px;
+  }
+}
+</style></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav id="nav" class="hidden-sm hidden-xs affix nav"><div class="list-group"><a data-toggle="collapse" data-target="#companies-menu" href="#companies" class="list-group-item heading collapsed"><span class="toggle pull-right"><span class="open fa fa-angle-down"></span><span class="closed fa fa-angle-right"></span></span>Companies</a><div id="companies-menu" class="collapse"><a href="#companies-company-list" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item">Company List</a><a href="#companies-company-list-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get Companies</span></a><a href="#companies-company-list-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Create New Company</span></a><a href="#companies-company" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item">Company</a><a href="#companies-company-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get Company</span></a><a href="#companies-company-put" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-warning"><i class="fa fa-pencil"></i></span><span class="indent">Update a Company</span></a><a href="#companies-company-delete" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-danger"><i class="fa fa-times"></i></span><span class="indent">Delete a Company</span></a></div></div><div class="list-group"><a data-toggle="collapse" data-target="#users-menu" href="#users" class="list-group-item heading collapsed"><span class="toggle pull-right"><span class="open fa fa-angle-down"></span><span class="closed fa fa-angle-right"></span></span>Users</a><div id="users-menu" class="collapse"><a href="#users-user-list" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item">User List</a><a href="#users-user-list-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get Users</span></a><a href="#users-user-list-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Create New User</span></a><a href="#users-users" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item">Users</a><a href="#users-users-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get User</span></a><a href="#users-users-put" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-warning"><i class="fa fa-pencil"></i></span><span class="indent">Update an User</span></a><a href="#users-users-delete" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item"><span class="badge alert-danger"><i class="fa fa-times"></i></span><span class="indent">Delete a User</span></a></div></div><p style="text-align: center; word-wrap: break-word;"><a href="https://github.com/JLBoor/sample-app-api">https://github.com/JLBoor/sample-app-api</a></p></nav></div><div class="col-md-8"><div><header><div class="page-header"><h1 id="top">Sample App - API Documentation</h1></div></header><div class="description"></div></div><div><div class="panel panel-default"><div class="panel-heading"><h3 id="companies">Companies&nbsp;<a href="#companies"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><h4 id="companies-company-list">Company List&nbsp;<a href="#companies-company-list"><i class="fa fa-link"></i></a></h4><section id="companies-company-list-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Get Companies</span></div><div style="float:left"><a href="#companies-company-list-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/companies</code></div></div><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#9bc7ba7c498c89a7fd6e790259251db3" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="9bc7ba7c498c89a7fd6e790259251db3" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>[
+    {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"kkad2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Company name 1"</span></span>,
+        "<span class="hljs-attribute">contact</span>": <span class="hljs-value"><span class="hljs-string">"Contact 1"</span>
+    </span>},
+    {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"zz4d2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Company name 2"</span></span>,
+        "<span class="hljs-attribute">contact</span>": <span class="hljs-value"><span class="hljs-string">"Contact 2"</span>
+    </span>}
+]
+</code></pre></li></ul></section><section id="companies-company-list-post" class="panel panel-success"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Create New Company</span></div><div style="float:left"><a href="#companies-company-list-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/companies</code></div></div><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#57d993443a79b217b3ff3795edbb6926" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="57d993443a79b217b3ff3795edbb6926" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Company name 3"</span>,
+    <span class="hljs-string">"contact"</span>: <span class="hljs-string">"Contact 3"</span>
+},
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a data-toggle="collapse" data-target="#82912030d503a617e9c625b17ae83050" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="82912030d503a617e9c625b17ae83050" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"zzad2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Company name 3"</span></span>,
+    "<span class="hljs-attribute">contact</span>": <span class="hljs-value"><span class="hljs-string">"Contact 3"</span>
+</span>}
+</code></pre></li></ul></section><h4 id="companies-company">Company&nbsp;<a href="#companies-company"><i class="fa fa-link"></i></a></h4><section id="companies-company-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Get Company</span></div><div style="float:left"><a href="#companies-company-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/companies/{id}</code></div></div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>zzad2a5a-d4c6-4f94-a2cb-b763f8ada69</span></span></dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#06621f43b2ce2365ff1f4a9331bf366c" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="06621f43b2ce2365ff1f4a9331bf366c" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"zzad2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Company name 3"</span></span>,
+    "<span class="hljs-attribute">contact</span>": <span class="hljs-value"><span class="hljs-string">"Contact 3"</span>
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a data-toggle="collapse" data-target="#a7adefe31c469a9e214681d23d8734dd" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="a7adefe31c469a9e214681d23d8734dd" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Company not found"</span>
+</span>}
+</code></pre></li></ul></section><section id="companies-company-put" class="panel panel-warning"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Update a Company</span></div><div style="float:left"><a href="#companies-company-put" class="btn btn-xs btn-warning">PUT</a></div><div style="overflow:hidden"><code>/companies/{id}</code></div></div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>zzad2a5a-d4c6-4f94-a2cb-b763f8ada69</span></span></dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#e3d8820d419cb9c4b8354905fb130c0d" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="e3d8820d419cb9c4b8354905fb130c0d" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Company x"</span>
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#c63a14e5bf48c446f3324018cd70c2cd" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="c63a14e5bf48c446f3324018cd70c2cd" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"zzad2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Company name 3"</span></span>,
+    "<span class="hljs-attribute">contact</span>": <span class="hljs-value"><span class="hljs-string">"Contact 3"</span>
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a data-toggle="collapse" data-target="#8d8e4926f064cd1763f511e3b1625dfb" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="8d8e4926f064cd1763f511e3b1625dfb" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Company not found"</span>
+</span>}
+</code></pre></li></ul></section><section id="companies-company-delete" class="panel panel-danger"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Delete a Company</span></div><div style="float:left"><a href="#companies-company-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/companies/{id}</code></div></div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>zzad2a5a-d4c6-4f94-a2cb-b763f8ada69</span></span></dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>204</code></strong></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a data-toggle="collapse" data-target="#e5ed1a1f6d9df1e00aa30a026b96cc80" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="e5ed1a1f6d9df1e00aa30a026b96cc80" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Company not found"</span>
+</span>}
+</code></pre></li></ul></section></div></div></div><div><div class="panel panel-default"><div class="panel-heading"><h3 id="users">Users&nbsp;<a href="#users"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><h4 id="users-user-list">User List&nbsp;<a href="#users-user-list"><i class="fa fa-link"></i></a></h4><section id="users-user-list-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Get Users</span></div><div style="float:left"><a href="#users-user-list-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/users</code></div></div><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#a935169c1d886a148d891124e1cb0ec2" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="a935169c1d886a148d891124e1cb0ec2" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>[
+    {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"abcd2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+        "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"First 1"</span></span>,
+        "<span class="hljs-attribute">last</span>": <span class="hljs-value"><span class="hljs-string">"Last 1"</span>
+    </span>},
+    {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"zzed2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+        "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"First 2"</span></span>,
+        "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"Last 2"</span>
+    </span>}
+]
+</code></pre></li></ul></section><section id="users-user-list-post" class="panel panel-success"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Create New User</span></div><div style="float:left"><a href="#users-user-list-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/users</code></div></div><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#bbaa22cf7a57a3c6db970a7602127dd1" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="bbaa22cf7a57a3c6db970a7602127dd1" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>    {
+        "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"First 3"</span></span>,
+        "<span class="hljs-attribute">last</span>": <span class="hljs-value"><span class="hljs-string">"Last 3"</span>
+    </span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a data-toggle="collapse" data-target="#7c596a678214cc22639149c99b2bc4ee" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="7c596a678214cc22639149c99b2bc4ee" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"kkad2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+    "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"First 3"</span></span>,
+    "<span class="hljs-attribute">last</span>": <span class="hljs-value"><span class="hljs-string">"Last 3"</span>
+</span>}
+</code></pre></li></ul></section><h4 id="users-users">Users&nbsp;<a href="#users-users"><i class="fa fa-link"></i></a></h4><section id="users-users-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Get User</span></div><div style="float:left"><a href="#users-users-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/users/{id}</code></div></div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>kkad2a5a-d4c6-4f94-a2cb-b763f8ada69</span></span></dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#03be63d1cc1e53768a1109a494ccea07" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="03be63d1cc1e53768a1109a494ccea07" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"kkad2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+    "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"First 3"</span></span>,
+    "<span class="hljs-attribute">last</span>": <span class="hljs-value"><span class="hljs-string">"Last 3"</span>
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a data-toggle="collapse" data-target="#7315010dfd1fb9845a309fd58bce0326" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="7315010dfd1fb9845a309fd58bce0326" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"User not found"</span>
+</span>}
+</code></pre></li></ul></section><section id="users-users-put" class="panel panel-warning"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Update an User</span></div><div style="float:left"><a href="#users-users-put" class="btn btn-xs btn-warning">PUT</a></div><div style="overflow:hidden"><code>/users/{id}</code></div></div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>kkad2a5a-d4c6-4f94-a2cb-b763f8ada69</span></span></dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#583abe0325f23edbdbffc167897b12a1" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="583abe0325f23edbdbffc167897b12a1" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"First x"</span>
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#9fa418dd2e917e228547ad3cb740f253" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="9fa418dd2e917e228547ad3cb740f253" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"kkad2a5a-d4c6-4f94-a2cb-b763f8ada69"</span></span>,
+    "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"First 3"</span></span>,
+    "<span class="hljs-attribute">last</span>": <span class="hljs-value"><span class="hljs-string">"Last 3"</span>
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a data-toggle="collapse" data-target="#7a92f2e070c8c672b600baa083c278ae" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="7a92f2e070c8c672b600baa083c278ae" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"User not found"</span>
+</span>}
+</code></pre></li></ul></section><section id="users-users-delete" class="panel panel-danger"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Delete a User</span></div><div style="float:left"><a href="#users-users-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/users/{id}</code></div></div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>kkad2a5a-d4c6-4f94-a2cb-b763f8ada69</span></span></dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>204</code></strong></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a data-toggle="collapse" data-target="#bc4b036c6b0ea40bec58fbe98eb72074" class="pull-right collapsed"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="bc4b036c6b0ea40bec58fbe98eb72074" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"User not found"</span>
+</span>}
+</code></pre></li></ul></section></div></div></div></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 31 Mar 2015</p><div id="localFile" style="display: none; position: absolute; top: 0; left: 0; width: 100%; color: white; background: red; font-size: 150%; text-align: center; padding: 1em;">This page may not display correctly when opened as a local file. Instead, view it from a web server.
+
+</div></body><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script>(function() {
+  if (location.protocol === 'file:') {
+    document.getElementById('localFile').style.display = 'block';
+  }
+
+}).call(this);
+</script><script>(function() {
+  $('table').addClass('table');
+
+}).call(this);
+</script></html>
