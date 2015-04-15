@@ -15,6 +15,7 @@ var db = low('db/db.json');
  * Create and configure Server
  **/
 var server = restify.createServer();
+server.use(restify.CORS());
 server.use(restify.bodyParser());
 server.pre(function(req, res, next) {
     req.headers.accept = 'application/json';
@@ -32,6 +33,6 @@ restUtils.addDomain(server, 'companies', db);
 /**
  * Start Listening
  **/
-server.listen(8080, function() {
+server.listen(9002, function() {
     console.log('%s listening at %s', server.name, server.url);
 });
