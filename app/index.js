@@ -26,6 +26,8 @@ server.pre(function(req, res, next) {
 /**
  * Add routes
  **/
+restUtils.addDomain(server, 'me', db);
+restUtils.addDomain(server, 'identities', db);
 restUtils.addDomain(server, 'users', db);
 restUtils.addDomain(server, 'companies', db);
 
