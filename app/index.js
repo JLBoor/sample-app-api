@@ -16,6 +16,7 @@ var db = low('db/db.json');
  **/
 var server = restify.createServer();
 server.pre(restify.CORS());
+server.use(restify.queryParser());
 server.use(restify.bodyParser());
 server.use(restify.fullResponse());
 

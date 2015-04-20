@@ -1,5 +1,21 @@
 function getAll(req, res, next, domainDB) {
-    res.send(domainDB.value());
+
+    domainDB = domainDB.chain();
+
+    var params = req.params;
+
+    if(params._orderBy) {
+        domainDB = domainDB.sortBy(params._orderBy);
+    }
+
+    var elements = domainDB.value();
+
+    var metadata = {totalElements: elements.length};
+
+    if(params._start && params._end) {
+        elements = elements.slice(params._start, params._end);
+    }
+    res.send({elements: elements, _metadata: metadata});
     next();
 }
 
