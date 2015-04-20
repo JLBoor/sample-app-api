@@ -4,6 +4,11 @@ function getAll(req, res, next, domainDB) {
 
     var params = req.params;
 
+    //FIXME the parameters name are hardcoded to the example client. Make it flexible
+    if(params.name) {
+        domainDB = domainDB.where({name: params.name});
+    }
+
     if(params._orderBy) {
         domainDB = domainDB.sortBy(params._orderBy);
     }
