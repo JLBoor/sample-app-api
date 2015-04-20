@@ -1,22 +1,4 @@
 {
-  "me": [
-    {
-      "id": "0",
-      "identity": {
-        "id": "0",
-        "username": "john.doe",
-        "authorities": [
-          "USER",
-          "USER.EDIT",
-          "USER.CREATE",
-          "COMPANY",
-          "COMPANY.EDIT",
-          "COMPANY.CREATE",
-          "HOME"
-        ]
-      }
-    }
-  ],
   "identities": [
     {
       "id": "0",
@@ -31,14 +13,14 @@
       ]
     },
     {
-      "id": "accd2a5a-d4c6-4f94-a2cb-b763f8ada78",
+      "id": "1",
       "username": "company",
       "authorities": [
         "COMPANY"
       ]
     },
     {
-      "id": "kkad2a5a-d4c6-4f94-a2cb-b763f8ada69",
+      "id": "2",
       "username": "french",
       "lang": "fr",
       "authorities": [
@@ -358,5 +340,6 @@
         "bs": "target end-to-end models"
       }
     }
-  ]
+  ],
+  "me": []
 }
