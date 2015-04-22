@@ -17,9 +17,14 @@ function getAll(req, res, next, domainDB) {
 
     var metadata = {totalElements: elements.length};
 
-    if(params._start && params._end) {
-        elements = elements.slice(params._start, params._end);
+    if(params._pageNumber && params._pageSize) {
+        var pageNumber = parseInt(params._pageNumber);
+        var pageSize = parseInt(params._pageSize);
+        var start = (pageNumber - 1) * pageSize;
+        var end = start + pageSize;
+        elements = elements.slice(start, end);
     }
+
     res.send({elements: elements, _metadata: metadata});
     next();
 }
