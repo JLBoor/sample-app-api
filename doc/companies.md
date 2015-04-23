@@ -1,24 +1,43 @@
 
 # Group Companies
 
-## Company List [/companies]
+## Company List [/v1/companies]
 
 + Model
 
     + Body
 
-            [
-                {
-                    "id": "kkad2a5a-d4c6-4f94-a2cb-b763f8ada69",
-                    "name": "Company name 1",
-                    "contact": "Contact 1"
-                },
-                {
-                    "id": "zz4d2a5a-d4c6-4f94-a2cb-b763f8ada69",
-                    "name": "Company name 2",
-                    "contact": "Contact 2"
-                }
-            ]
+            {  
+               "elements":[  
+                  {  
+                     "id":"0",
+                     "contact":{  
+                        "name":{  
+                           "first":"Karyn",
+                           "last":"Porter"
+                        },
+                        "email":"karyn.porter@stelaecor.com"
+                     },
+                     "name":"MARVAME",
+                     "phone":"+1 (828) 533-2655"
+                  },
+                  {  
+                     "id":"1",
+                     "contact":{  
+                        "name":{  
+                           "first":"Page",
+                           "last":"Williamson"
+                        },
+                        "email":"page.williamson@trollery.name"
+                     },
+                     "name":"BOILICON",
+                     "phone":"+1 (893) 432-3827"
+                  },
+               ],
+               "_metadata":{  
+                  "totalElements":2
+               }
+            }
 
 ### Get Companies  [GET]
 
@@ -32,22 +51,38 @@
     + Body
 
             {
-                "name": "Company name 3",
-                "contact": "Contact 3"
-            },
+               "name":"Company name 3",
+               "address":"Address 3",
+               "phone":"Phone 3",
+               "contact":{
+                  "name":{
+                     "last":"Lastname 3",
+                     "first":"Firstname 3"
+                  },
+                  "email":"company3@gmail.com"
+               }
+            }
 
 + Response 201
 
     + Body
 
             {
-                "id": "zzad2a5a-d4c6-4f94-a2cb-b763f8ada69",
-                "name": "Company name 3",
-                "contact": "Contact 3"
+               "id":"b8fb6c42-9eef-4d3f-821d-5535e218fd6c",
+               "name":"Company name 3",
+               "address":"Address 3",
+               "phone":"Phone 3",
+               "contact":{
+                  "name":{
+                     "last":"Lastname 3",
+                     "first":"Firstname 3"
+                  },
+                  "email":"company3@gmail.com"
+               }
             }
 
 
-## Company [/companies/{id}]
+## Company [/v1/companies/{id}]
 
 + Parameters
 
@@ -56,12 +91,21 @@
 + Model
 
     + Body
-
+    
             {
-                "id": "zzad2a5a-d4c6-4f94-a2cb-b763f8ada69",
-                "name": "Company name 3",
-                "contact": "Contact 3"
+               "id":"b8fb6c42-9eef-4d3f-821d-5535e218fd6c",
+               "name":"Company name 3",
+               "address":"Address 3",
+               "phone":"Phone 3",
+               "contact":{
+                  "name":{
+                     "last":"Lastname 3",
+                     "first":"Firstname 3"
+                  },
+                  "email":"company3@gmail.com"
+               }
             }
+
 
 ### Get Company [GET]
 
@@ -84,13 +128,35 @@
     + Body
 
             {
-                "name": "Company x"
+               "id":"2",
+                "name":"TALAE",
+                "phone":"+1 (816) 590-3053",
+                "address":"New address"
+               "contact":{
+                  "name":{
+                     "first":"Joseph",
+                     "last":"Cherry"
+                  },
+                  "email":"joseph.cherry@venoflex.org"
+               }
             }
 
 + Response 200
 
-    [Company][]
-
+            {
+               "id":"2",
+                "name":"TALAE",
+                "phone":"+1 (816) 590-3053",
+                "address":"New address"
+               "contact":{
+                  "name":{
+                     "first":"Joseph",
+                     "last":"Cherry"
+                  },
+                  "email":"joseph.cherry@venoflex.org"
+               }
+            }
+            
 + Response 404
 
     + Body

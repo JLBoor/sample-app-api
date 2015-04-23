@@ -1,26 +1,38 @@
 
 # Group Users
 
-## User List [/users]
+## User List [/v1/users?_orderBy, _pageNumber, _pageSize]
 
 + Model
 
     + Body
+    
+            {
+                "elements":
+                [
+                    {
+                        "id":"8",
+                        "name":"Clementina DuBuque",
+                        "email":"Rey.Padberg@karina.com"
+                    },
+                    {
+                        "id":"3",
+                        "name":"Ervin Howell",
+                        "email":"Nathan@yesenia.net"
+                    }
+                ],
+                "_metadata":
+                    {
+                        "totalElements":2
+                    }
+            }    
 
-            [
-                {
-                    "id": "abcd2a5a-d4c6-4f94-a2cb-b763f8ada69",
-                    "first": "First 1",
-                    "last": "Last 1"
-                },
-                {
-                    "id": "zzed2a5a-d4c6-4f94-a2cb-b763f8ada69",
-                    "first": "First 2",
-                    "first": "Last 2"
-                }
-            ]
 
 ### Get Users  [GET]
++ Parameters
+    + _orderBy (optional, string, `name`) ... Order by property
+    + _pageNumber (optional, number, `3`) ... Use for pagination
+    + _pageSize (optional, number, `20`) ... Use for pagination
 
 + Response 200
 
@@ -32,8 +44,8 @@
     + Body
 
                 {
-                    "first": "First 3",
-                    "last": "Last 3"
+                   "name":"New User",
+                   "email":"myEmail@gmail.com"
                 }
 
 + Response 201
@@ -41,13 +53,13 @@
     + Body
 
             {
-                "id": "kkad2a5a-d4c6-4f94-a2cb-b763f8ada69",
-                "first": "First 3",
-                "last": "Last 3"
+               "id":"6b767ac5-1e54-4736-8d82-6fdb23b214c7",
+               "name":"New User",
+               "email":"myEmail@gmail.com"
             }
 
 
-## Users [/users/{id}]
+## Users [/v1/users/{id}]
 
 + Parameters
 
@@ -58,9 +70,9 @@
     + Body
 
             {
-                "id": "kkad2a5a-d4c6-4f94-a2cb-b763f8ada69",
-                "first": "First 3",
-                "last": "Last 3"
+                 "id":"6b767ac5-1e54-4736-8d82-6fdb23b214c7",
+                 "name":"New User",
+                 "email":"myEmail@gmail.com"
             }
 
 ### Get User [GET]
@@ -84,12 +96,18 @@
     + Body
 
             {
-                "first": "First x"
+                 "id":"6b767ac5-1e54-4736-8d82-6fdb23b214c7",
+                 "name":"New Name",
+                 "email":"newEmail@gmail.com"
             }
 
 + Response 200
 
-    [Users][]
+            {
+                 "id":"6b767ac5-1e54-4736-8d82-6fdb23b214c7",
+                 "name":"New Name",
+                 "email":"newEmail@gmail.com"
+            }    
 
 + Response 404
 
